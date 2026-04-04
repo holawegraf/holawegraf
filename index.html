@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeGraf - Responsive Fix</title>
+
+<style>
+body{margin:0;font-family:sans-serif}
+
+/* PRODUCTOS */
+#productos{padding:80px 40px;}
+
+.categories-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+}
+
+.cat-card{
+  position:relative;
+  height:320px;
+  background:#111;
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.cat-card-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  transition:.5s;
+}
+
+.cat-card:hover .cat-card-bg{
+  transform:scale(1.1);
+  opacity:.7;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .categories-grid{grid-template-columns:repeat(2,1fr);}
+  .cat-card{height:280px;}
+}
+
+@media(max-width:576px){
+  .categories-grid{grid-template-columns:1fr;}
+  .cat-card{height:260px;}
+}
+</style>
+</head>
+
+<body>
+
+<section id="productos">
+<h2>Productos</h2>
+
+<div class="categories-grid">
+
+<div class="cat-card">
+<div class="cat-card-bg" style="background-image:url('https://picsum.photos/400/600?1')"></div>
+</div>
+
+<div class="cat-card">
+<div class="cat-card-bg" style="background-image:url('https://picsum.photos/400/600?2')"></div>
+</div>
+
+<div class="cat-card">
+<div class="cat-card-bg" style="background-image:url('https://picsum.photos/400/600?3')"></div>
+</div>
+
+<div class="cat-card">
+<div class="cat-card-bg" style="background-image:url('https://picsum.photos/400/600?4')"></div>
+</div>
+
+</div>
+</section>
+
+</body>
+</html>
