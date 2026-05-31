@@ -21,10 +21,64 @@
     "description": "Mates de polímero con sublimación full color en el exterior e interior de colores pasteles intercambiable. Con bombilla incluida. Ideales para regalo y empresas.",
     "image": "https://wegraf.com.ar/producto-mate.jpg",
     "brand": { "@type": "Brand", "name": "Wegraf" },
-    "offers": {
+   "offers": {
       "@type": "Offer",
       "priceCurrency": "ARS",
       "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Wegraf",
+        "address": { "@type": "PostalAddress", "addressLocality": "Olivos", "addressRegion": "Buenos Aires", "addressCountry": "AR" },
+        "telephone": "+5491173692091",
+        "email": "holawegraf@gmail.com"
+      }
+    }
+Y reemplazalo por esto:
+json"offers": {
+      "@type": "Offer",
+      "priceCurrency": "ARS",
+      "price": "0",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceCurrency": "ARS",
+        "price": "0",
+        "description": "Precio a consultar según diseño y cantidad"
+      },
+      "availability": "https://schema.org/InStock",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "currency": "ARS"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "AR"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 5,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 7,
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "AR",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
       "seller": {
         "@type": "LocalBusiness",
         "name": "Wegraf",
