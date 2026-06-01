@@ -193,7 +193,7 @@
   .nav-dropdown { position: relative; }
   .nav-dropdown > a::after { content: ' ▾'; font-size: 10px; }
   .dropdown-menu {
-    display: none;
+    display: block;
     position: absolute;
     top: calc(100% + 8px);
     left: 50%;
@@ -206,7 +206,17 @@
     padding: 0.5rem 0;
     z-index: 200;
   }
-  .nav-dropdown:hover .dropdown-menu { display: block; }
+ .nav-dropdown:hover .dropdown-menu { display: block; }
+.nav-dropdown .dropdown-menu {
+  transition: opacity 1.2s ease;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+}
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
   .dropdown-menu a {
     display: block;
     padding: 8px 18px;
